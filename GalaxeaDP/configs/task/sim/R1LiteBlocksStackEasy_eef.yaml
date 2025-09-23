@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - override /data: r1lite/lerobot_eef
+  - override /model: unet_aug_idpenc
+
+data:
+  train:
+    dataset_dirs: 
+      - /root/.cache/huggingface/lerobot/galaxea/R1LiteBlocksStackEasy_joints/
+

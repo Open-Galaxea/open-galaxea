@@ -1,0 +1,8 @@
+urdf: r1_v2_1_0.urdf
+link_radius: 0.05 
+base_links:
+  - base_link
+ee_links:
+  - torso_link4
+starting_config: [0.7494000196456909, -1.503499984741211, -1.1, 0.0]
+obstacles:

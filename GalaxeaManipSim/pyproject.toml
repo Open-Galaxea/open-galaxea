@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages]
+find = { include = ["galaxea_sim", "galaxea_sim.*"] }
+
+[project]
+name = "galaxea-sim"
+version = "0.1.0"
+description = "A robotics simulation package"
+readme = "README.md"
+authors = [{ name = "Chenhao Lu", email = "luch21@mails.tsinghua.edu.cn" }]
+license = { file = "LICENSE" }
+dependencies = [
+    "sapien==3.0.0b1",
+    "tyro",
+    "gymnasium",
+    "loguru",
+    "tqdm",
+    "trimesh",
+    "h5py",
+    "imageio",
+    "transforms3d",
+    "torch",
+    "pytorch_kinematics_ms",
+    "seaborn",
+    "coacd==1.0.5",
+    "sapien==3.0.0b1",
+    "tyro",
+    "gymnasium==0.29.1",
+    "loguru",
+    "tqdm",
+    "trimesh",
+    "h5py",
+    "imageio",
+    "transforms3d",
+    "pytorch_kinematics_ms",
+    "seaborn",
+    "coacd",
+    "idna",
+    "certifi",
+    "mplib",
+    "pytz",
+]
+requires-python = ">=3.8"

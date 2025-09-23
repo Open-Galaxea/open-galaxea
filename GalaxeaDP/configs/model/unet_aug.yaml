@@ -1,0 +1,109 @@
+_target_: src.models.dp_bc_module.DiffusionPolicyBCModule
+
+optimizer:
+  type: AdamW
+  betas: [0.9, 0.95]
+  lr: 0.0001
+  weight_decay: 0.0001
+  pretrained_obs_encoder_lr_scale: 1.0
+
+lr_scheduler: 
+  scheduler:
+    type: OneCycleLR
+    max_lr: ${model.optimizer.lr}
+    pct_start: 0.15
+    anneal_strategy: cos
+    div_factor: 100.0
+    final_div_factor: 1000.0
+  interval: step
+  frequency: 1
+
+policy:
+  _target_: src.models.policy.diffusion_unet_image_policy.DiffusionUnetImagePolicy
+  shape_meta: ${data.train.shape_meta}
+  action_keys: ${data.train.action_keys}
+  qpos_keys: ${data.train.qpos_keys}
+  
+  train_transforms:
+    head_rgb:
+      - _target_: torchvision.transforms.Resize
+        size: [252, 336]
+      - _target_: torchvision.transforms.RandomCrop
+        size: [240, 320]
+      - _target_: torchvision.transforms.ColorJitter
+        brightness: 0.3
+        contrast: 0.4
+        saturation: 0.5
+        hue: 0.3
+    left_wrist_rgb:
+      - _target_: torchvision.transforms.Resize
+        size: [252, 336]
+      - _target_: torchvision.transforms.RandomCrop
+        size: [240, 320]
+      - _target_: torchvision.transforms.ColorJitter
+        brightness: 0.3
+        contrast: 0.4
+        saturation: 0.5
+        hue: 0.3
+    right_wrist_rgb:
+      - _target_: torchvision.transforms.Resize
+        size: [252, 336]
+      - _target_: torchvision.transforms.RandomCrop
+        size: [240, 320]
+      - _target_: torchvision.transforms.ColorJitter
+        brightness: 0.3
+        contrast: 0.4
+        saturation: 0.5
+        hue: 0.3
+  
+  eval_transforms:
+    head_rgb:
+      - _target_: torchvision.transforms.Resize
+        size: [252, 336]
+      - _target_: torchvision.transforms.CenterCrop
+        size: [240, 320]
+    left_wrist_rgb:
+      - _target_: torchvision.transforms.Resize
+        size: [252, 336]
+      - _target_: torchvision.transforms.CenterCrop
+        size: [240, 320]
+    right_wrist_rgb:
+      - _target_: torchvision.transforms.Resize
+        size: [252, 336]
+      - _target_: torchvision.transforms.CenterCrop
+        size: [240, 320]
+  
+  noise_scheduler:
+    _target_: diffusers.schedulers.scheduling_ddpm.DDPMScheduler
+    beta_end: 0.02
+    beta_schedule: squaredcos_cap_v2
+    beta_start: 0.0001
+    clip_sample: true
+    num_train_timesteps: 20
+    prediction_type: epsilon
+    variance_type: fixed_small
+  
+  obs_encoder:
+    _target_: src.models.encoder.obs_encoder.ResNetImageEncoder
+    shape_meta: ${data.train.shape_meta}
+    vision_obs_step: ${data.train.vision_obs_size}
+    state_obs_step: ${data.train.qpos_obs_size}
+    share_encoder: True
+    state_mlp_size: [64, 128, 256]
+    additional_convs_channel: [128, 64, 32]
+    additional_convs_kernel_size: [3, 3, 3]
+    additional_convs_stride: [1, 1, 1]
+    additional_convs_padding: [1, 1, 1]
+    fusion_mlp_size: [2048, 1024, 1024, 512]
+  
+  horizon: ${data.train.chunk_size}
+  n_vision_obs_steps: ${data.train.vision_obs_size}
+  n_qpos_obs_steps: ${data.train.qpos_obs_size}
+  rotation_type: ${data.train.rotation_type}
+  use_relative_control: ${data.train.use_relative_control}
+  num_inference_steps: 20
+  diffusion_step_embed_dim: 128
+  down_dims: [512, 1024, 2048]
+  kernel_size: 5
+  n_groups: 8
+

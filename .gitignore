@@ -1,94 +1,421 @@
-Doc/
+# From ./GalaxeaLeRobot/.gitignore
+# Copyright 2024 The HuggingFace Inc. team. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Dev scripts
+GalaxeaLeRobot/.dev
+
+# Logging
+GalaxeaLeRobot/logs
+GalaxeaLeRobot/tmp
+GalaxeaLeRobot/wandb
+
+# Data
+GalaxeaLeRobot/data
+GalaxeaLeRobot/outputs
+
+# Apple
+GalaxeaLeRobot/.DS_Store
+
+# VS Code
+GalaxeaLeRobot/.vscode
+GalaxeaLeRobot/.devcontainer
+
+# HPC
+GalaxeaLeRobot/nautilus/*.yaml
+GalaxeaLeRobot/*.key
+
+# Slurm
+GalaxeaLeRobot/sbatch*.sh
+
 # Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-evaluate_results/
-
-*.png
-*.pt
+GalaxeaLeRobot/__pycache__/
+GalaxeaLeRobot/*.py[cod]
+GalaxeaLeRobot/*$py.class
 
 # C extensions
-*.so
+GalaxeaLeRobot/*.so
 
 # Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-wandb/
-runs/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+GalaxeaLeRobot/.Python
+GalaxeaLeRobot/build/
+GalaxeaLeRobot/develop-eggs/
+GalaxeaLeRobot/dist/
+GalaxeaLeRobot/downloads/
+GalaxeaLeRobot/eggs/
+GalaxeaLeRobot/.eggs/
+GalaxeaLeRobot/lib/
+GalaxeaLeRobot/lib64/
+GalaxeaLeRobot/parts/
+GalaxeaLeRobot/sdist/
+GalaxeaLeRobot/var/
+GalaxeaLeRobot/wheels/
+GalaxeaLeRobot/pip-wheel-metadata/
+GalaxeaLeRobot/share/python-wheels/
+GalaxeaLeRobot/*.egg-info/
+GalaxeaLeRobot/.installed.cfg
+GalaxeaLeRobot/*.egg
+GalaxeaLeRobot/MANIFEST
+
+# uv/poetry lock files
+GalaxeaLeRobot/poetry.lock
+GalaxeaLeRobot/uv.lock
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+GalaxeaLeRobot/*.manifest
+GalaxeaLeRobot/*.spec
 
 # Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+GalaxeaLeRobot/pip-log.txt
+GalaxeaLeRobot/pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
+GalaxeaLeRobot/!tests/artifacts
+GalaxeaLeRobot/htmlcov/
+GalaxeaLeRobot/.tox/
+GalaxeaLeRobot/.nox/
+GalaxeaLeRobot/.coverage
+GalaxeaLeRobot/.coverage.*
+GalaxeaLeRobot/nosetests.xml
+GalaxeaLeRobot/coverage.xml
+GalaxeaLeRobot/*.cover
+GalaxeaLeRobot/*.py,cover
+GalaxeaLeRobot/.hypothesis/
+GalaxeaLeRobot/.pytest_cache/
+
+# Ignore .cache
+GalaxeaLeRobot/.cache/*
 
 # Translations
-*.mo
-*.pot
+GalaxeaLeRobot/*.mo
+GalaxeaLeRobot/*.pot
 
 # Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+GalaxeaLeRobot/*.log
+GalaxeaLeRobot/local_settings.py
+GalaxeaLeRobot/db.sqlite3
+GalaxeaLeRobot/db.sqlite3-journal
 
 # Flask stuff:
-instance/
-.webassets-cache
+GalaxeaLeRobot/instance/
+GalaxeaLeRobot/.webassets-cache
 
 # Scrapy stuff:
-.scrapy
+GalaxeaLeRobot/.scrapy
 
 # Sphinx documentation
-docs/_build/
+GalaxeaLeRobot/docs/_build/
 
 # PyBuilder
-.pybuilder/
-target/
+GalaxeaLeRobot/.pybuilder/
+GalaxeaLeRobot/target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
+GalaxeaLeRobot/.ipynb_checkpoints
 
 # IPython
-profile_default/
-ipython_config.py
+GalaxeaLeRobot/profile_default/
+GalaxeaLeRobot/ipython_config.py
+
+# pyenv
+GalaxeaLeRobot/.python-version
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+GalaxeaLeRobot/__pypackages__/
+
+# Celery stuff
+GalaxeaLeRobot/celerybeat-schedule
+GalaxeaLeRobot/celerybeat.pid
+
+# SageMath parsed files
+GalaxeaLeRobot/*.sage.py
+
+# Environments
+GalaxeaLeRobot/.env
+GalaxeaLeRobot/.venv
+GalaxeaLeRobot/env/
+GalaxeaLeRobot/venv/
+GalaxeaLeRobot/env.bak/
+GalaxeaLeRobot/venv.bak/
+
+# Spyder project settings
+GalaxeaLeRobot/.spyderproject
+GalaxeaLeRobot/.spyproject
+
+# Rope project settings
+GalaxeaLeRobot/.ropeproject
+
+# mkdocs documentation
+GalaxeaLeRobot//site
+
+# mypy
+GalaxeaLeRobot/.mypy_cache/
+GalaxeaLeRobot/.dmypy.json
+GalaxeaLeRobot/dmypy.json
+
+# Pyre type checker
+GalaxeaLeRobot/.pyre/
+
+# pytype static type analyzer
+GalaxeaLeRobot/.pytype/
+
+# Cython debug symbols
+GalaxeaLeRobot/cython_debug/
+
+# From ./GalaxeaDP/.gitignore
+# Byte-compiled / optimized / DLL files
+GalaxeaDP/__pycache__/
+GalaxeaDP/*.py[cod]
+GalaxeaDP/*$py.class
+
+# C extensions
+GalaxeaDP/*.so
+
+# Distribution / packaging
+GalaxeaDP/.Python
+GalaxeaDP/build/
+GalaxeaDP/develop-eggs/
+GalaxeaDP/dist/
+GalaxeaDP/downloads/
+GalaxeaDP/eggs/
+GalaxeaDP/.eggs/
+GalaxeaDP/lib/
+GalaxeaDP/lib64/
+GalaxeaDP/parts/
+GalaxeaDP/sdist/
+GalaxeaDP/var/
+GalaxeaDP/wheels/
+GalaxeaDP/share/python-wheels/
+GalaxeaDP/*.egg-info/
+GalaxeaDP/.installed.cfg
+GalaxeaDP/*.egg
+GalaxeaDP/MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+GalaxeaDP/*.manifest
+GalaxeaDP/*.spec
+
+# Installer logs
+GalaxeaDP/pip-log.txt
+GalaxeaDP/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+GalaxeaDP/htmlcov/
+GalaxeaDP/.tox/
+GalaxeaDP/.nox/
+GalaxeaDP/.coverage
+GalaxeaDP/.coverage.*
+GalaxeaDP/.cache
+GalaxeaDP/nosetests.xml
+GalaxeaDP/coverage.xml
+GalaxeaDP/*.cover
+GalaxeaDP/*.py,cover
+GalaxeaDP/.hypothesis/
+GalaxeaDP/.pytest_cache/
+GalaxeaDP/cover/
+
+# Translations
+GalaxeaDP/*.mo
+GalaxeaDP/*.pot
+
+# Django stuff:
+GalaxeaDP/*.log
+GalaxeaDP/local_settings.py
+GalaxeaDP/db.sqlite3
+GalaxeaDP/db.sqlite3-journal
+
+# Flask stuff:
+GalaxeaDP/instance/
+GalaxeaDP/.webassets-cache
+
+# Scrapy stuff:
+GalaxeaDP/.scrapy
+
+# Sphinx documentation
+GalaxeaDP/docs/_build/
+
+# PyBuilder
+GalaxeaDP/.pybuilder/
+GalaxeaDP/target/
+
+# Jupyter Notebook
+GalaxeaDP/.ipynb_checkpoints
+
+# IPython
+GalaxeaDP/profile_default/
+GalaxeaDP/ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+GalaxeaDP/__pypackages__/
+
+# Celery stuff
+GalaxeaDP/celerybeat-schedule
+GalaxeaDP/celerybeat.pid
+
+# SageMath parsed files
+GalaxeaDP/*.sage.py
+
+# Environments
+GalaxeaDP/.env
+GalaxeaDP/.venv
+GalaxeaDP/env/
+GalaxeaDP/venv/
+GalaxeaDP/ENV/
+GalaxeaDP/env.bak/
+GalaxeaDP/venv.bak/
+
+# Spyder project settings
+GalaxeaDP/.spyderproject
+GalaxeaDP/.spyproject
+
+# Rope project settings
+GalaxeaDP/.ropeproject
+
+# mkdocs documentation
+GalaxeaDP//site
+
+# mypy
+GalaxeaDP/.mypy_cache/
+GalaxeaDP/.dmypy.json
+GalaxeaDP/dmypy.json
+
+# Pyre type checker
+GalaxeaDP/.pyre/
+
+# pytype static type analyzer
+GalaxeaDP/.pytype/
+
+# Cython debug symbols
+GalaxeaDP/cython_debug/
+
+GalaxeaDP/.dp/work_dirs
+GalaxeaDP/.dp/~/galaxea_act/logs/maniskill2_dp
+GalaxeaDP/.idea/
+GalaxeaDP/workspace/
+GalaxeaDP/work_dirs
+GalaxeaDP/.vscode
+GalaxeaDP/*.ipynb
+
+GalaxeaDP//data
+
+# From ./G0/.gitignore
+# Byte-compiled / optimized / DLL files
+G0/__pycache__/
+G0/*.py[cod]
+G0/*$py.class
+
+G0/evaluate_results/
+
+G0/*.png
+G0/*.pt
+
+# C extensions
+G0/*.so
+
+# Distribution / packaging
+G0/.Python
+G0/build/
+G0/develop-eggs/
+G0/dist/
+G0/downloads/
+G0/wandb/
+G0/runs/
+G0/eggs/
+G0/.eggs/
+G0/lib/
+G0/lib64/
+G0/parts/
+G0/sdist/
+G0/var/
+G0/wheels/
+G0/share/python-wheels/
+G0/*.egg-info/
+G0/.installed.cfg
+G0/*.egg
+G0/MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+G0/*.manifest
+G0/*.spec
+
+# Installer logs
+G0/pip-log.txt
+G0/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+G0/htmlcov/
+G0/.tox/
+G0/.nox/
+G0/.coverage
+G0/.coverage.*
+G0/.cache
+G0/nosetests.xml
+G0/coverage.xml
+G0/*.cover
+G0/*.py,cover
+G0/.hypothesis/
+G0/.pytest_cache/
+G0/cover/
+
+# Translations
+G0/*.mo
+G0/*.pot
+
+# Django stuff:
+G0/*.log
+G0/local_settings.py
+G0/db.sqlite3
+G0/db.sqlite3-journal
+
+# Flask stuff:
+G0/instance/
+G0/.webassets-cache
+
+# Scrapy stuff:
+G0/.scrapy
+
+# Sphinx documentation
+G0/docs/_build/
+
+# PyBuilder
+G0/.pybuilder/
+G0/target/
+
+# Jupyter Notebook
+G0/.ipynb_checkpoints
+
+# IPython
+G0/profile_default/
+G0/ipython_config.py
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
@@ -115,52 +442,52 @@ ipython_config.py
 #   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
 #   in version control.
 #   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-.pdm.toml
-.pdm-python
-.pdm-build/
+G0/.pdm.toml
+G0/.pdm-python
+G0/.pdm-build/
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
+G0/__pypackages__/
 
 # Celery stuff
-celerybeat-schedule
-celerybeat.pid
+G0/celerybeat-schedule
+G0/celerybeat.pid
 
 # SageMath parsed files
-*.sage.py
+G0/*.sage.py
 
 # Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+G0/.env
+G0/.venv
+G0/env/
+G0/venv/
+G0/ENV/
+G0/env.bak/
+G0/venv.bak/
 
 # Spyder project settings
-.spyderproject
-.spyproject
+G0/.spyderproject
+G0/.spyproject
 
 # Rope project settings
-.ropeproject
+G0/.ropeproject
 
 # mkdocs documentation
-/site
+G0//site
 
 # mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+G0/.mypy_cache/
+G0/.dmypy.json
+G0/dmypy.json
 
 # Pyre type checker
-.pyre/
+G0/.pyre/
 
 # pytype static type analyzer
-.pytype/
+G0/.pytype/
 
 # Cython debug symbols
-cython_debug/
+G0/cython_debug/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
@@ -169,922 +496,25 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-*.pkl
-*.mp4
-.idea
-# libero
-*.mp4
-rollouts/
-experiments/logs/
-tmp# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-.dp/work_dirs
-.dp/~/galaxea_act/logs/maniskill2_dp
-.idea/
-workspace/
-work_dirs
-.vscode
-*.ipynb
-
-/data
-/out# Copyright 2024 The HuggingFace Inc. team. All rights reserved.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-# Dev scripts
-.dev
-
-# Logging
-logs
-tmp
-wandb
-
-# Data
-data
-outputs
-
-# Apple
-.DS_Store
-
-# VS Code
-.vscode
-.devcontainer
-
-# HPC
-nautilus/*.yaml
-*.key
-
-# Slurm
-sbatch*.sh
-
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# uv/poetry lock files
-poetry.lock
-uv.lock
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-!tests/artifacts
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-
-# Ignore .cache
-.cache/*
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-
-# Packages #
-############
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-
-# OS generated files #
-######################
-.DS_Store
-Thumbs.db
-
-# Python #
-##########
-*.pyc
-*.pyo
-__pycache__/
-
-# Node.js #
-###########
-node_modules/
-
-# Java #
-########
-*.war
-*.ear
-
-# Visual Studio #
-#################
-.vscode/
-*.suo
-*.user
-*.userossc
-*.sln.docstates
-
-# macOS #
-########
-*.DS_Store
-
-# Windows #
-###########
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-ros 
-tmp
-aloha_maniskill_sim
-notebooks
-datasets
-robotwin_models
-outputs
-replay_results
-*.zip
-collect.sh
-replay.sh
-*.egg-info
-assets/raw
-assets/raw_webpG0/# Byte-compiled / optimized / DLL files
-G0/__pycache__/
-G0/*.py[cod]
-G0/*$py.class
-G0/
-G0/evaluate_results/
-G0/
-G0/*.png
-G0/*.pt
-G0/
-G0/# C extensions
-G0/*.so
-G0/
-G0/# Distribution / packaging
-G0/.Python
-G0/build/
-G0/develop-eggs/
-G0/dist/
-G0/downloads/
-G0/wandb/
-G0/runs/
-G0/eggs/
-G0/.eggs/
-G0/lib/
-G0/lib64/
-G0/parts/
-G0/sdist/
-G0/var/
-G0/wheels/
-G0/share/python-wheels/
-G0/*.egg-info/
-G0/.installed.cfg
-G0/*.egg
-G0/MANIFEST
-G0/
-G0/# PyInstaller
-G0/#  Usually these files are written by a python script from a template
-G0/#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-G0/*.manifest
-G0/*.spec
-G0/
-G0/# Installer logs
-G0/pip-log.txt
-G0/pip-delete-this-directory.txt
-G0/
-G0/# Unit test / coverage reports
-G0/htmlcov/
-G0/.tox/
-G0/.nox/
-G0/.coverage
-G0/.coverage.*
-G0/.cache
-G0/nosetests.xml
-G0/coverage.xml
-G0/*.cover
-G0/*.py,cover
-G0/.hypothesis/
-G0/.pytest_cache/
-G0/cover/
-G0/
-G0/# Translations
-G0/*.mo
-G0/*.pot
-G0/
-G0/# Django stuff:
-G0/*.log
-G0/local_settings.py
-G0/db.sqlite3
-G0/db.sqlite3-journal
-G0/
-G0/# Flask stuff:
-G0/instance/
-G0/.webassets-cache
-G0/
-G0/# Scrapy stuff:
-G0/.scrapy
-G0/
-G0/# Sphinx documentation
-G0/docs/_build/
-G0/
-G0/# PyBuilder
-G0/.pybuilder/
-G0/target/
-G0/
-G0/# Jupyter Notebook
-G0/.ipynb_checkpoints
-G0/
-G0/# IPython
-G0/profile_default/
-G0/ipython_config.py
-G0/
-G0/# pyenv
-G0/#   For a library or package, you might want to ignore these files since the code is
-G0/#   intended to run in multiple environments; otherwise, check them in:
-G0/# .python-version
-G0/
-G0/# pipenv
-G0/#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-G0/#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-G0/#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-G0/#   install all needed dependencies.
-G0/#Pipfile.lock
-G0/
-G0/# poetry
-G0/#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-G0/#   This is especially recommended for binary packages to ensure reproducibility, and is more
-G0/#   commonly ignored for libraries.
-G0/#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-G0/#poetry.lock
-G0/
-G0/# pdm
-G0/#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-G0/#pdm.lock
-G0/#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-G0/#   in version control.
-G0/#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-G0/.pdm.toml
-G0/.pdm-python
-G0/.pdm-build/
-G0/
-G0/# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-G0/__pypackages__/
-G0/
-G0/# Celery stuff
-G0/celerybeat-schedule
-G0/celerybeat.pid
-G0/
-G0/# SageMath parsed files
-G0/*.sage.py
-G0/
-G0/# Environments
-G0/.env
-G0/.venv
-G0/env/
-G0/venv/
-G0/ENV/
-G0/env.bak/
-G0/venv.bak/
-G0/
-G0/# Spyder project settings
-G0/.spyderproject
-G0/.spyproject
-G0/
-G0/# Rope project settings
-G0/.ropeproject
-G0/
-G0/# mkdocs documentation
-G0//site
-G0/
-G0/# mypy
-G0/.mypy_cache/
-G0/.dmypy.json
-G0/dmypy.json
-G0/
-G0/# Pyre type checker
-G0/.pyre/
-G0/
-G0/# pytype static type analyzer
-G0/.pytype/
-G0/
-G0/# Cython debug symbols
-G0/cython_debug/
-G0/
-G0/# PyCharm
-G0/#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-G0/#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-G0/#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-G0/#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-G0/#.idea/
-G0/
 G0/*.pkl
 G0/*.mp4
 G0/.idea
-G0/# libero
+# libero
 G0/*.mp4
 G0/rollouts/
 G0/experiments/logs/
-G0/tmpGalaxeaDP/# Byte-compiled / optimized / DLL files
-GalaxeaDP/__pycache__/
-GalaxeaDP/*.py[cod]
-GalaxeaDP/*$py.class
-GalaxeaDP/
-GalaxeaDP/# C extensions
-GalaxeaDP/*.so
-GalaxeaDP/
-GalaxeaDP/# Distribution / packaging
-GalaxeaDP/.Python
-GalaxeaDP/build/
-GalaxeaDP/develop-eggs/
-GalaxeaDP/dist/
-GalaxeaDP/downloads/
-GalaxeaDP/eggs/
-GalaxeaDP/.eggs/
-GalaxeaDP/lib/
-GalaxeaDP/lib64/
-GalaxeaDP/parts/
-GalaxeaDP/sdist/
-GalaxeaDP/var/
-GalaxeaDP/wheels/
-GalaxeaDP/share/python-wheels/
-GalaxeaDP/*.egg-info/
-GalaxeaDP/.installed.cfg
-GalaxeaDP/*.egg
-GalaxeaDP/MANIFEST
-GalaxeaDP/
-GalaxeaDP/# PyInstaller
-GalaxeaDP/#  Usually these files are written by a python script from a template
-GalaxeaDP/#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-GalaxeaDP/*.manifest
-GalaxeaDP/*.spec
-GalaxeaDP/
-GalaxeaDP/# Installer logs
-GalaxeaDP/pip-log.txt
-GalaxeaDP/pip-delete-this-directory.txt
-GalaxeaDP/
-GalaxeaDP/# Unit test / coverage reports
-GalaxeaDP/htmlcov/
-GalaxeaDP/.tox/
-GalaxeaDP/.nox/
-GalaxeaDP/.coverage
-GalaxeaDP/.coverage.*
-GalaxeaDP/.cache
-GalaxeaDP/nosetests.xml
-GalaxeaDP/coverage.xml
-GalaxeaDP/*.cover
-GalaxeaDP/*.py,cover
-GalaxeaDP/.hypothesis/
-GalaxeaDP/.pytest_cache/
-GalaxeaDP/cover/
-GalaxeaDP/
-GalaxeaDP/# Translations
-GalaxeaDP/*.mo
-GalaxeaDP/*.pot
-GalaxeaDP/
-GalaxeaDP/# Django stuff:
-GalaxeaDP/*.log
-GalaxeaDP/local_settings.py
-GalaxeaDP/db.sqlite3
-GalaxeaDP/db.sqlite3-journal
-GalaxeaDP/
-GalaxeaDP/# Flask stuff:
-GalaxeaDP/instance/
-GalaxeaDP/.webassets-cache
-GalaxeaDP/
-GalaxeaDP/# Scrapy stuff:
-GalaxeaDP/.scrapy
-GalaxeaDP/
-GalaxeaDP/# Sphinx documentation
-GalaxeaDP/docs/_build/
-GalaxeaDP/
-GalaxeaDP/# PyBuilder
-GalaxeaDP/.pybuilder/
-GalaxeaDP/target/
-GalaxeaDP/
-GalaxeaDP/# Jupyter Notebook
-GalaxeaDP/.ipynb_checkpoints
-GalaxeaDP/
-GalaxeaDP/# IPython
-GalaxeaDP/profile_default/
-GalaxeaDP/ipython_config.py
-GalaxeaDP/
-GalaxeaDP/# pyenv
-GalaxeaDP/#   For a library or package, you might want to ignore these files since the code is
-GalaxeaDP/#   intended to run in multiple environments; otherwise, check them in:
-GalaxeaDP/# .python-version
-GalaxeaDP/
-GalaxeaDP/# pipenv
-GalaxeaDP/#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-GalaxeaDP/#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-GalaxeaDP/#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-GalaxeaDP/#   install all needed dependencies.
-GalaxeaDP/#Pipfile.lock
-GalaxeaDP/
-GalaxeaDP/# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-GalaxeaDP/__pypackages__/
-GalaxeaDP/
-GalaxeaDP/# Celery stuff
-GalaxeaDP/celerybeat-schedule
-GalaxeaDP/celerybeat.pid
-GalaxeaDP/
-GalaxeaDP/# SageMath parsed files
-GalaxeaDP/*.sage.py
-GalaxeaDP/
-GalaxeaDP/# Environments
-GalaxeaDP/.env
-GalaxeaDP/.venv
-GalaxeaDP/env/
-GalaxeaDP/venv/
-GalaxeaDP/ENV/
-GalaxeaDP/env.bak/
-GalaxeaDP/venv.bak/
-GalaxeaDP/
-GalaxeaDP/# Spyder project settings
-GalaxeaDP/.spyderproject
-GalaxeaDP/.spyproject
-GalaxeaDP/
-GalaxeaDP/# Rope project settings
-GalaxeaDP/.ropeproject
-GalaxeaDP/
-GalaxeaDP/# mkdocs documentation
-GalaxeaDP//site
-GalaxeaDP/
-GalaxeaDP/# mypy
-GalaxeaDP/.mypy_cache/
-GalaxeaDP/.dmypy.json
-GalaxeaDP/dmypy.json
-GalaxeaDP/
-GalaxeaDP/# Pyre type checker
-GalaxeaDP/.pyre/
-GalaxeaDP/
-GalaxeaDP/# pytype static type analyzer
-GalaxeaDP/.pytype/
-GalaxeaDP/
-GalaxeaDP/# Cython debug symbols
-GalaxeaDP/cython_debug/
-GalaxeaDP/
-GalaxeaDP/.dp/work_dirs
-GalaxeaDP/.dp/~/galaxea_act/logs/maniskill2_dp
-GalaxeaDP/.idea/
-GalaxeaDP/workspace/
-GalaxeaDP/work_dirs
-GalaxeaDP/.vscode
-GalaxeaDP/*.ipynb
-GalaxeaDP/
-GalaxeaDP//data
-GalaxeaDP//outGalaxeaLeRobot/# Copyright 2024 The HuggingFace Inc. team. All rights reserved.
-GalaxeaLeRobot/#
-GalaxeaLeRobot/# Licensed under the Apache License, Version 2.0 (the "License");
-GalaxeaLeRobot/# you may not use this file except in compliance with the License.
-GalaxeaLeRobot/# You may obtain a copy of the License at
-GalaxeaLeRobot/#
-GalaxeaLeRobot/#     http://www.apache.org/licenses/LICENSE-2.0
-GalaxeaLeRobot/#
-GalaxeaLeRobot/# Unless required by applicable law or agreed to in writing, software
-GalaxeaLeRobot/# distributed under the License is distributed on an "AS IS" BASIS,
-GalaxeaLeRobot/# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-GalaxeaLeRobot/# See the License for the specific language governing permissions and
-GalaxeaLeRobot/# limitations under the License.
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Dev scripts
-GalaxeaLeRobot/.dev
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Logging
-GalaxeaLeRobot/logs
-GalaxeaLeRobot/tmp
-GalaxeaLeRobot/wandb
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Data
-GalaxeaLeRobot/data
-GalaxeaLeRobot/outputs
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Apple
-GalaxeaLeRobot/.DS_Store
-GalaxeaLeRobot/
-GalaxeaLeRobot/# VS Code
-GalaxeaLeRobot/.vscode
-GalaxeaLeRobot/.devcontainer
-GalaxeaLeRobot/
-GalaxeaLeRobot/# HPC
-GalaxeaLeRobot/nautilus/*.yaml
-GalaxeaLeRobot/*.key
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Slurm
-GalaxeaLeRobot/sbatch*.sh
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Byte-compiled / optimized / DLL files
-GalaxeaLeRobot/__pycache__/
-GalaxeaLeRobot/*.py[cod]
-GalaxeaLeRobot/*$py.class
-GalaxeaLeRobot/
-GalaxeaLeRobot/# C extensions
-GalaxeaLeRobot/*.so
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Distribution / packaging
-GalaxeaLeRobot/.Python
-GalaxeaLeRobot/build/
-GalaxeaLeRobot/develop-eggs/
-GalaxeaLeRobot/dist/
-GalaxeaLeRobot/downloads/
-GalaxeaLeRobot/eggs/
-GalaxeaLeRobot/.eggs/
-GalaxeaLeRobot/lib/
-GalaxeaLeRobot/lib64/
-GalaxeaLeRobot/parts/
-GalaxeaLeRobot/sdist/
-GalaxeaLeRobot/var/
-GalaxeaLeRobot/wheels/
-GalaxeaLeRobot/pip-wheel-metadata/
-GalaxeaLeRobot/share/python-wheels/
-GalaxeaLeRobot/*.egg-info/
-GalaxeaLeRobot/.installed.cfg
-GalaxeaLeRobot/*.egg
-GalaxeaLeRobot/MANIFEST
-GalaxeaLeRobot/
-GalaxeaLeRobot/# uv/poetry lock files
-GalaxeaLeRobot/poetry.lock
-GalaxeaLeRobot/uv.lock
-GalaxeaLeRobot/
-GalaxeaLeRobot/# PyInstaller
-GalaxeaLeRobot/#  Usually these files are written by a python script from a template
-GalaxeaLeRobot/#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-GalaxeaLeRobot/*.manifest
-GalaxeaLeRobot/*.spec
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Installer logs
-GalaxeaLeRobot/pip-log.txt
-GalaxeaLeRobot/pip-delete-this-directory.txt
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Unit test / coverage reports
-GalaxeaLeRobot/!tests/artifacts
-GalaxeaLeRobot/htmlcov/
-GalaxeaLeRobot/.tox/
-GalaxeaLeRobot/.nox/
-GalaxeaLeRobot/.coverage
-GalaxeaLeRobot/.coverage.*
-GalaxeaLeRobot/nosetests.xml
-GalaxeaLeRobot/coverage.xml
-GalaxeaLeRobot/*.cover
-GalaxeaLeRobot/*.py,cover
-GalaxeaLeRobot/.hypothesis/
-GalaxeaLeRobot/.pytest_cache/
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Ignore .cache
-GalaxeaLeRobot/.cache/*
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Translations
-GalaxeaLeRobot/*.mo
-GalaxeaLeRobot/*.pot
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Django stuff:
-GalaxeaLeRobot/*.log
-GalaxeaLeRobot/local_settings.py
-GalaxeaLeRobot/db.sqlite3
-GalaxeaLeRobot/db.sqlite3-journal
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Flask stuff:
-GalaxeaLeRobot/instance/
-GalaxeaLeRobot/.webassets-cache
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Scrapy stuff:
-GalaxeaLeRobot/.scrapy
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Sphinx documentation
-GalaxeaLeRobot/docs/_build/
-GalaxeaLeRobot/
-GalaxeaLeRobot/# PyBuilder
-GalaxeaLeRobot/.pybuilder/
-GalaxeaLeRobot/target/
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Jupyter Notebook
-GalaxeaLeRobot/.ipynb_checkpoints
-GalaxeaLeRobot/
-GalaxeaLeRobot/# IPython
-GalaxeaLeRobot/profile_default/
-GalaxeaLeRobot/ipython_config.py
-GalaxeaLeRobot/
-GalaxeaLeRobot/# pyenv
-GalaxeaLeRobot/.python-version
-GalaxeaLeRobot/
-GalaxeaLeRobot/# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-GalaxeaLeRobot/__pypackages__/
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Celery stuff
-GalaxeaLeRobot/celerybeat-schedule
-GalaxeaLeRobot/celerybeat.pid
-GalaxeaLeRobot/
-GalaxeaLeRobot/# SageMath parsed files
-GalaxeaLeRobot/*.sage.py
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Environments
-GalaxeaLeRobot/.env
-GalaxeaLeRobot/.venv
-GalaxeaLeRobot/env/
-GalaxeaLeRobot/venv/
-GalaxeaLeRobot/env.bak/
-GalaxeaLeRobot/venv.bak/
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Spyder project settings
-GalaxeaLeRobot/.spyderproject
-GalaxeaLeRobot/.spyproject
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Rope project settings
-GalaxeaLeRobot/.ropeproject
-GalaxeaLeRobot/
-GalaxeaLeRobot/# mkdocs documentation
-GalaxeaLeRobot//site
-GalaxeaLeRobot/
-GalaxeaLeRobot/# mypy
-GalaxeaLeRobot/.mypy_cache/
-GalaxeaLeRobot/.dmypy.json
-GalaxeaLeRobot/dmypy.json
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Pyre type checker
-GalaxeaLeRobot/.pyre/
-GalaxeaLeRobot/
-GalaxeaLeRobot/# pytype static type analyzer
-GalaxeaLeRobot/.pytype/
-GalaxeaLeRobot/
-GalaxeaLeRobot/# Cython debug symbols
-GalaxeaLeRobot/cython_debug/
-GalaxeaManipSim/# Compiled source #
-GalaxeaManipSim/###################
+
+# From ./GalaxeaManipSim/.gitignore
+# Compiled source #
+###################
 GalaxeaManipSim/*.com
 GalaxeaManipSim/*.class
 GalaxeaManipSim/*.dll
 GalaxeaManipSim/*.exe
 GalaxeaManipSim/*.o
-GalaxeaManipSim/
-GalaxeaManipSim/# Packages #
-GalaxeaManipSim/############
+
+# Packages #
+############
 GalaxeaManipSim/*.7z
 GalaxeaManipSim/*.dmg
 GalaxeaManipSim/*.gz
@@ -1093,51 +523,51 @@ GalaxeaManipSim/*.jar
 GalaxeaManipSim/*.rar
 GalaxeaManipSim/*.tar
 GalaxeaManipSim/*.zip
-GalaxeaManipSim/
-GalaxeaManipSim/# Logs and databases #
-GalaxeaManipSim/######################
+
+# Logs and databases #
+######################
 GalaxeaManipSim/*.log
 GalaxeaManipSim/*.sql
 GalaxeaManipSim/*.sqlite
-GalaxeaManipSim/
-GalaxeaManipSim/# OS generated files #
-GalaxeaManipSim/######################
+
+# OS generated files #
+######################
 GalaxeaManipSim/.DS_Store
 GalaxeaManipSim/Thumbs.db
-GalaxeaManipSim/
-GalaxeaManipSim/# Python #
-GalaxeaManipSim/##########
+
+# Python #
+##########
 GalaxeaManipSim/*.pyc
 GalaxeaManipSim/*.pyo
 GalaxeaManipSim/__pycache__/
-GalaxeaManipSim/
-GalaxeaManipSim/# Node.js #
-GalaxeaManipSim/###########
+
+# Node.js #
+###########
 GalaxeaManipSim/node_modules/
-GalaxeaManipSim/
-GalaxeaManipSim/# Java #
-GalaxeaManipSim/########
+
+# Java #
+########
 GalaxeaManipSim/*.war
 GalaxeaManipSim/*.ear
-GalaxeaManipSim/
-GalaxeaManipSim/# Visual Studio #
-GalaxeaManipSim/#################
+
+# Visual Studio #
+#################
 GalaxeaManipSim/.vscode/
 GalaxeaManipSim/*.suo
 GalaxeaManipSim/*.user
 GalaxeaManipSim/*.userossc
 GalaxeaManipSim/*.sln.docstates
-GalaxeaManipSim/
-GalaxeaManipSim/# macOS #
-GalaxeaManipSim/########
+
+# macOS #
+########
 GalaxeaManipSim/*.DS_Store
-GalaxeaManipSim/
-GalaxeaManipSim/# Windows #
-GalaxeaManipSim/###########
+
+# Windows #
+###########
 GalaxeaManipSim/Thumbs.db
 GalaxeaManipSim/ehthumbs.db
 GalaxeaManipSim/Desktop.ini
-GalaxeaManipSim/
+
 GalaxeaManipSim/ros 
 GalaxeaManipSim/tmp
 GalaxeaManipSim/aloha_maniskill_sim
@@ -1151,4 +581,6 @@ GalaxeaManipSim/collect.sh
 GalaxeaManipSim/replay.sh
 GalaxeaManipSim/*.egg-info
 GalaxeaManipSim/assets/raw
-GalaxeaManipSim/assets/raw_webp.history/
+
+.history/
+Doc/

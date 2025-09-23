@@ -1,0 +1,118 @@
+# @package _global_
+
+# specify here default configuration
+# order of defaults determines the order in which configs override each other
+defaults:
+  - _self_
+  - data:
+  - model:
+  - task:
+
+trainer:
+  _target_: lightning.pytorch.trainer.Trainer
+  default_root_dir: ${paths.output_dir}
+  min_epochs: 1 # prevents early stopping
+  max_steps: 20000
+  accelerator: gpu
+  # TODO: add val
+  check_val_every_n_epoch: 10000
+  strategy: auto
+  # set True to to ensure deterministic results
+  # makes training slower but gives more reproducibility than just setting seeds
+  deterministic: false
+  devices: [0]
+  num_nodes: 1
+  sync_batchnorm: true
+  gradient_clip_val: 0.5
+  accumulate_grad_batches: 1
+  log_every_n_steps: 50
+  # mixed precision for extra speed-up
+  # precision: 16
+  precision: 32-true
+
+callbacks:
+  model_checkpoint:
+    _target_: lightning.pytorch.callbacks.ModelCheckpoint
+    dirpath: ${paths.output_dir}/checkpoints
+    filename: step_{step:05d}
+    monitor: null
+    verbose: true
+    save_last: link
+    save_top_k: -1
+    mode: max
+    auto_insert_metric_name: false
+    save_weights_only: false
+    every_n_train_steps: 5000
+    train_time_interval: null
+    every_n_epochs: null
+    save_on_train_epoch_end: false
+  model_summary:
+    _target_: lightning.pytorch.callbacks.RichModelSummary
+    max_depth: -1
+  rich_progress_bar:
+    _target_: lightning.pytorch.callbacks.RichProgressBar
+  lr_monitor:
+    _target_: lightning.pytorch.callbacks.LearningRateMonitor
+    logging_interval: step
+
+logger:
+  wandb:
+    _target_: lightning.pytorch.loggers.wandb.WandbLogger
+    save_dir: ${paths.output_dir}
+    offline: false
+    project: 
+    log_model: false # upload lightning ckpts
+    prefix: "" # a string to put at the beginning of metric keys
+    # entity: "" # set to name of your wandb team
+    group: 
+    tags: ${tags}
+    job_type: ""
+    name: 
+
+extras:
+  ignore_warnings: false
+  enforce_tags: true
+  print_config: true
+
+hydra:
+  defaults:
+    - override hydra_logging: colorlog
+    - override job_logging: colorlog
+  # output directory, generated dynamically on each run
+  run:
+    dir: "${oc.env:GALAXEA_DP_WORK_DIR}/${hydra.job.name}/${hydra.job.override_dirname}/${now:%Y-%m-%d_%H-%M-%S}"
+  job_logging:
+    handlers:
+      file:
+        # Incorporates fix from https://github.com/facebookresearch/hydra/pull/2242
+        filename: ${hydra.runtime.output_dir}/train.log
+
+paths:
+  # path to logging directory
+  output_dir: ${hydra:runtime.output_dir}
+
+
+# tags to help you identify your experiments
+# you can overwrite this in experiment configs
+# overwrite from command line with `python train.py tags="[first_tag, second_tag]"`
+tags: ["dev"]
+
+# set False to skip model training
+train: true
+
+# evaluate on test set, using best model weights achieved during training
+# lightning chooses best weights based on the metric specified in checkpoint callback
+test: false
+
+# compile model for faster training with pytorch 2.0
+compile: false
+
+# simply provide checkpoint path to resume training
+ckpt_path:
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: 1000
+
+env:
+
+target_controller_type:

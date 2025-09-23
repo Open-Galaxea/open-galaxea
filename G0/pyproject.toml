@@ -1,0 +1,77 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "G0"
+authors = [
+    {name = "Tianyuan Yuan", email="yuantianyuan01@gmail.com"},
+    {name = "Yicheng Liu", email="moooooore66@gmail.com"},
+    {name = "Chenhao Lu", email="luch21@mails.tsinghua.edu.cn"},
+]
+description = "Galaxea G0-VLA"
+version = "0.0.1"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["vision-language-actions models", "multimodal pretraining", "robot learning"]
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "einops",
+    "huggingface-hub==0.24.0",
+    "json-numpy==2.1.0",
+    "jsonlines==4.0.0",
+    "matplotlib==3.10.0",
+    "peft==0.11.1",
+    "protobuf==3.20.3",
+    "rich==13.7.1",
+    "sentencepiece==0.1.99",
+    "timm==0.9.10",
+    "tokenizers==0.21.0",
+    "transformers==4.47.1",
+    "wandb==0.19.6",
+    "tensorflow==2.15.0",
+    "tensorflow_datasets==4.9.3",
+    "tensorflow_graphics==2021.12.3",
+    "beartype",
+    "einx>=0.3.0",
+    "einops>=0.8.0",
+    "ema-pytorch>=0.7.3",
+    "jaxtyping",
+    "rotary-embedding-torch>=0.8.5",
+    "rospkg==1.6.0",
+    "scipy==1.13.1",
+    "torch==2.5.0",
+    'torchtyping>=0.1.5',
+    "tqdm==4.67.1",
+    "prettytable==3.14.0",
+    "omegaconf==2.3.0",
+    "diffusers==0.11.0",
+]
+
+
+[project.urls]
+homepage = "https://opengalaxea.github.io/G0/"
+repository = "https://github.com/OpenGalaxea/G0"
+documentation = "https://github.com/OpenGalaxea/G0"
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["cache"]
+
+[tool.setuptools.package-data]
+"prismatic" = ["py.typed"]

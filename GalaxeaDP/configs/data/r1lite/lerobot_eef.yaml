@@ -1,0 +1,56 @@
+_target_: src.data.base_datamodule.BaseDataModule
+
+batch_size_train: 64
+batch_size_val: 64
+num_workers: 16
+pin_memory: true
+
+train:
+  _target_: src.data.galaxea_lerobot_dataset.GalaxeaLerobotDataset
+  dataset_dirs:
+
+  shape_meta:
+    action: 
+      shape: [16]
+    obs:
+      head_rgb:
+        shape: [360, 640]
+        transform_shape: [240, 320]
+      left_wrist_rgb:
+        shape: [480, 640]
+        transform_shape: [240, 320]
+      right_wrist_rgb: 
+        shape: [480, 640]
+        transform_shape: [240, 320]
+      qpos: 
+        shape: [16]
+  
+  action_keys: 
+    - left_ee_pose
+    - left_gripper
+    - right_ee_pose
+    - right_gripper
+  
+  qpos_keys: ${data.train.action_keys}
+  
+  chunk_size: 32
+  vision_obs_size: 1
+  qpos_obs_size: 1
+  rotation_type: quaternion
+  use_relative_control: False
+  val_set_proportion: 0.05
+  is_training: True
+
+val:
+  _target_: ${data.train._target_}
+  dataset_dirs: ${data.train.dataset_dirs}
+  shape_meta: ${data.train.shape_meta}
+  action_keys: ${data.train.action_keys}
+  qpos_keys: ${data.train.qpos_keys}
+  chunk_size: ${data.train.chunk_size}
+  vision_obs_size: ${data.train.vision_obs_size}
+  qpos_obs_size: ${data.train.qpos_obs_size}
+  rotation_type: ${data.train.rotation_type}
+  use_relative_control: ${data.train.use_relative_control}
+  val_set_proportion: ${data.train.val_set_proportion}
+  is_training: False

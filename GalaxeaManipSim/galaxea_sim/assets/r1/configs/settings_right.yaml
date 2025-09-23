@@ -1,0 +1,8 @@
+urdf: r1_v2_1_0_floating_right.urdf
+link_radius: 0.05 
+base_links:
+  - right_arm_base_link
+ee_links:
+  - right_gripper_link
+starting_config: [-1.5, 1.9508485794067383, -1.080855369567871, -0.4437669813632965, 0.17093953490257263, 0.19848759472370148]
+obstacles:
