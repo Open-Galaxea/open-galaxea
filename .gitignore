@@ -1151,4 +1151,4 @@ GalaxeaManipSim/collect.sh
 GalaxeaManipSim/replay.sh
 GalaxeaManipSim/*.egg-info
 GalaxeaManipSim/assets/raw
-GalaxeaManipSim/assets/raw_webp
+GalaxeaManipSim/assets/raw_webp.history/
