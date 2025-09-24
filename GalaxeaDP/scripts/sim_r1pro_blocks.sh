@@ -1,5 +1,5 @@
-env=R1LiteBlocksStackEasy
-task=R1LiteBlocksStackEasy_eef
+env=R1ProBlocksStackEasy
+task=R1ProBlocksStackEasy_joints
 dataset_dir="./data"
 export WANDB_MODE=offline
 export HF_HUB_OFFLINE=1

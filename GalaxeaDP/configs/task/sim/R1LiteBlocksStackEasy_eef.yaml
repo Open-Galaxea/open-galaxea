@@ -7,5 +7,5 @@ defaults:
 data:
   train:
     dataset_dirs: 
-      - /root/.cache/huggingface/lerobot/galaxea/R1LiteBlocksStackEasy_joints/
+      - /home/ubuntu/.cache/huggingface/lerobot/galaxea/R1LiteBlocksStackEasy_joints/
 

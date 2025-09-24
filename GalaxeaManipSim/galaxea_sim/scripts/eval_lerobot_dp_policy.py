@@ -7,8 +7,8 @@ import torch
 import tyro
 import cv2
 
-from lerobot.common.policies.diffusion.modeling_diffusion import DiffusionPolicy
-from lerobot.common.datasets.lerobot_dataset import LeRobotDatasetMetadata
+from lerobot.policies.diffusion.modeling_diffusion import DiffusionPolicy
+from lerobot.datasets.lerobot_dataset import LeRobotDatasetMetadata
 
 from galaxea_sim.utils.data_utils import save_dict_list_to_json
 
@@ -19,17 +19,17 @@ def evaluate(
     pretrained_policy_path: str,
     target_controller_type: str = "bimanual_relaxed_ik",
     device: str = "cuda",
-    headless: bool = True,
+    headless: bool = False,
     num_evaluations: int = 100,
     num_action_steps: int = 16,
-    save_video: bool = False,
+    save_video: bool = True,
 ):
     """Evaluate a pretrained policy in a simulated environment multiple times."""
     output_directory = Path(pretrained_policy_path) / "evaluations" / str(num_action_steps) 
     output_directory.mkdir(parents=True, exist_ok=True)
     with open(Path(pretrained_policy_path) / "dataset_metadata.pkl", "rb") as f:
         dataset_metadata: LeRobotDatasetMetadata = pickle.load(f)
-    policy = DiffusionPolicy.from_pretrained(pretrained_policy_path, map_location=device, dataset_stats=dataset_metadata.stats)
+    policy = DiffusionPolicy.from_pretrained(pretrained_policy_path,  dataset_stats=dataset_metadata.stats)
     policy.config.n_action_steps = num_action_steps
     infos = []
     env = gym.make(task, control_freq=15, headless=headless, max_episode_steps=500, controller_type = target_controller_type)
