@@ -13,5 +13,5 @@
 有任何疑惑可以联系小助手：18026868507
 欢迎进群讨论
 
-![wechat](Doc/assets/wechat.jpg)
+![wechat](assets/wechat.jpg)
 
