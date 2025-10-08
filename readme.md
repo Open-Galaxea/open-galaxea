@@ -2,6 +2,16 @@
 
 详细操作指南请参考[文档](https://open-galaxea.github.io/Doc/),进行安装使用
 
+学会应该能够自己跑出以下其中之一的任务及其结果。
+<video src="https://raw.githubusercontent.com/Open-Galaxea/open-galaxea/main/assets/sim_R1ProBottlePick.mp4" 
+       controls 
+       width="600"
+       muted
+       autoplay
+       loop>
+</video>
+
+
 ## 快速上手
 第一步，根据[Galaxea DP文档(初学):](https://open-galaxea.github.io/Doc/galaxea_dp/) 安装 Galaxea DP 及其他依赖， 一键启动（数据，训练，评估）
 
