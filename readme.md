@@ -2,14 +2,31 @@
 
 详细操作指南请参考[文档](https://open-galaxea.github.io/Doc/),进行安装使用
 
-学会应该能够自己跑出以下其中之一的任务及其结果。
-<video src="https://raw.githubusercontent.com/Open-Galaxea/open-galaxea/main/assets/sim_R1ProBottlePick.mp4" 
-       controls 
-       width="600"
-       muted
-       autoplay
-       loop>
-</video>
+学会应该能够自己跑出以下任务及其结果。
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <div style="text-align: center;">
+    <video src="https://raw.githubusercontent.com/Open-Galaxea/open-galaxea/main/assets/dp_R1ProBlocksStackEasy.mp4" 
+           controls 
+           width="400"
+           muted
+           autoplay
+           loop>
+    </video>
+    <p>💡 GalaxeaDP文档中的结果视频</p>
+  </div>
+
+  <div style="text-align: center;">
+    <video src="https://raw.githubusercontent.com/Open-Galaxea/open-galaxea/main/assets/sim_R1ProBottlePick.mp4" 
+           controls 
+           width="400"
+           muted
+           autoplay
+           loop>
+    </video>
+    <p>🧠 GalaxeaManipSim文档中的结果视频</p>
+  </div>
+</div>
+
 
 
 ## 快速上手
@@ -24,5 +41,5 @@
 
 欢迎进群讨论
 
-<img src="assets/wechat.jpg" alt="wechat" width="300"/>
+<img src="https://raw.githubusercontent.com/Open-Galaxea/open-galaxea/main/assets/wechat.jpg" alt="wechat" width="300"/>
 
