@@ -1,5 +1,5 @@
 env=R1ProBlocksStackEasy
-task=R1ProBlocksStackEasy_joints
+task=R1ProBlocksStackEasy_eef
 dataset_dir="./data"
 export WANDB_MODE=offline
 export HF_HUB_OFFLINE=1
@@ -44,10 +44,9 @@ bash scripts/train.sh \
 # open loop eval
 echo "------------ Open Loop Eval ------------"
 latest=$(ls -1 out/sim/$task | sort | tail -n 1)
-# latest=2025-09-18_00-45-07
 bash scripts/eval_open_loop.sh \
     task=sim/$task \
-    ckpt_path=out/sim/$task/$latest/checkpoints/step_05000.ckpt \
+    ckpt_path=out/sim/$task/$latest/checkpoints/step_20000.ckpt \
     data.train.dataset_dirs=[$dataset_dir/$env/lerobot] \
 
 # rollout eval in simulation
@@ -55,6 +54,6 @@ echo "------------ Rollout Eval in Sim ------------"
 eval_output=$(ls -1 out/sim/$task | sort | tail -n 1)
 bash scripts/eval_sim.sh \
     task=sim/$task \
-    ckpt_path=out/sim/$task/$latest/checkpoints/step_05000.ckpt \
+    ckpt_path=out/sim/$task/$latest/checkpoints/step_20000.ckpt \
     env=$env \
     target_controller_type=$target_controller_type
