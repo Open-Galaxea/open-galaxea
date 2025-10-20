@@ -1,6 +1,7 @@
-# Galaxea 文档
+# 动手学具身智能——星海图套件文档
+这里介绍 Galaxea R1 系列的仿真、数据集与扩散策略。
 
-欢迎使用。这里介绍 Galaxea R1 系列的仿真、数据集与扩散策略。
+文档链接：https://open-galaxea.github.io/Doc/
 
 学会应该能够自己跑出以下任务及其结果。
 <div style="display: flex; justify-content: center; gap: 20px;">
@@ -30,9 +31,9 @@
 
 ## 快速上手
 
-1. 第一步，根据[Galaxea DP文档(初学):](galaxea_dp.md) 安装 Galaxea DP 及其他依赖， 一键启动（数据，训练，评估）
-2. 第二步，根据[GalaxeaManipSim 模拟器(进阶)：](galaxea_manipsim.md) 学习具体每个步骤如何实现，如何添加不同任务，收集数据
-3. 第三步，根据[G0 大模型](g0.md)实际部署，双系统 VLA（大脑规划 + 小脑执行）、安装、推理与微调
+1. 第一步，根据[Galaxea DP文档(初学):](https://open-galaxea.github.io/Doc/galaxea_dp/) 安装 Galaxea DP 及其他依赖， 一键启动（数据，训练，评估）
+2. 第二步，根据[GalaxeaManipSim 模拟器(进阶)：](https://open-galaxea.github.io/Doc/galaxea_manipsim/) 学习具体每个步骤如何实现，如何添加不同任务，收集数据
+3. 第三步，根据[G0 大模型](https://open-galaxea.github.io/Doc/g0/)实际部署，双系统 VLA（大脑规划 + 小脑执行）、安装、推理与微调
 
 提示：使用顶部导航或搜索快速跳转。
 
